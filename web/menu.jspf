@@ -31,6 +31,7 @@ java.util.Map.Entry,
 java.util.List,
 java.util.HashMap,
 java.util.ArrayList,
+java.util.NavigableMap,
 
 org.opensolaris.opengrok.configuration.Project,
 org.opensolaris.opengrok.search.QueryBuilder,
@@ -169,7 +170,8 @@ org.opensolaris.opengrok.web.Util"
         name="project" multiple="multiple" size="<%=
         Math.min(6, projects.size()) %>"><%
         SortedSet<String> pRequested = cfg.getRequestedProjects();
-        for (Entry<String,String> e : pMap.entrySet()) {
+        NavigableMap<String,String> nMap = pMap.descendingMap();
+        for (Entry<String,String> e : nMap.entrySet()) {
             // TODO below "selected" has no effect if one refreshes the page
             // with F5 also below ondblclick doesn't work in IE ...
             // ondblclick="javascript:goFirstProject();"
