@@ -155,6 +155,20 @@ org.opensolaris.opengrok.web.Util"
 %>
 --%>
 </table>
+<input tabindex="9" class="submit" type="submit" value="Search" style="margin-left:100px;"/>
+    <input tabindex="10" class="submit" onclick="javascript: clearSearchFrom();"
+    type="button" value=" Clear "/>
+    <button class="help" tabindex="11" onclick="window.open('help.jsp');">Help
+    </button>
+<p style="margin-left:100px;">
+    <b>QuIC OpenGrok is a source code cross referencing tool</b> <br/>
+    Please see <a href="http://qwiki.qualcomm.com/quic/OpenGrok">this wiki</a>
+    for more info.<br/>
+    You can browse and search the code <a href="xref/">here</a>.<br/>
+    <span style="font-size:small">Please contact <a href="mailto:opengrok@quicinc.com">opengrok@quicinc.com</a> if you face any issues.
+</p>
+
+
 </div><%
 
     if (projects.size() != 0) {
@@ -187,13 +201,6 @@ org.opensolaris.opengrok.web.Util"
 </div><%
     }
     %>
-
-    <p><input tabindex="9" class="submit" type="submit" value="Search"/> 
-    <input tabindex="10" class="submit" onclick="javascript: clearSearchFrom();" 
-	   type="button" value=" Clear "/> 
-    <button class="help" tabindex="11" onclick="window.open('help.jsp');">Help
-    </button>
-    </p>
 </form>
 <%
 }
